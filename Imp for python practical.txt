@@ -1,0 +1,89 @@
+Important packages from <package-name> import <library-name>
+1]sklearn.preprocessing
+example:- from sklearn.preprocessing import LabelEncoder
+2]scipy (Scientific python) :
+example :- from scipy import stats
+3]sklearn.linear_model :-
+4]sklearn.model_selection :-
+5] sklearn.datasets 
+6]sklearn.metrics
+
+
+
+Important Library for Python(import <libray-name> as <short-form>
+1] pandas->import pandas as pd
+2] LabelEncoder -> it is used for categorical value convert numerical value in column
+3]numpy(numerical python) ->import numpy as np.
+4]matplotlib.pyplot ->import matplotlib.pyplot as plt.
+5] LinearRegression() :-
+from sklearn.linear_model import LineraRegression
+6]train_test_split() :-
+from sklearn.model_selection import train_test_split
+7]load_botson() :- botson dataset is load , fetch_california_housing
+from sklearn.datasets import load_boston()
+8]StandardScaler()=>Standardization of a dataset is a common requirement for many
+machine learning estimators: they might behave badly if the
+individual features do not more or less look like standard normally
+distributed data.
+7]confusion_matrix(),precision_score(),recall_score(),f1_score()
+
+	
+
+Pandas Function
+
+1> df=pd.read_csv(r'<file-path>')
+2> df.head(n) :- return first five row data frame by default yo can pass n also to get no of first n row.
+3>df.shape :- return tuple contain .like(no_of_row,no_of_column)
+4>df.dtypes :- return all column name in front of its data types.
+5>df.columns :- return array of all column name.
+6>df.isnull() :-return all dataset and its value contain true or false ,true means value is present and false means value is non present means nan.
+7>df.isnull().sum() :-return all column in front count nan value.
+8> df.describe() :- numerical columns given value returns mean ,median ,mode ,min ,max,50%,25%,75% value
+9>df.dropna(axis=0/1,inplac=True/False) => dropna remove column or row if axis is 1 remove column and if axis is 0 remove row and in actual by default axis=0 is present permentaly not removed for that inplace= true we have to do by default false.
+10>df['col_name'] or df[['col1','col2','col3']] :- we acess particular column and or multiple column in data frame
+11>small_df=df.iloc[:,0:4] :-extract subset of data set using indexes :,give all row in df and 0:4 gave 0-3 columns in df.
+12>column.astype("type-name") :- column data type convert into type-name. 
+12> df.copy(deep=true) :- new object of data frame without reference to original data frame
+13>column.unique() :- unique values in column
+
+LbelEncoder Class & Function
+1]first import
+from sklearn.preprocessing import LbelEncoder
+2]obj create of LbelEncoder
+obj_name = LabelEncoder()
+3] .fit_transform(column)
+obj_name.fit_transform(y) column categorical  transfer into numerical value.
+
+numpy Function
+1]val,val2=np.percentile(column_numeris_value,[25,75])
+method for finding the outliers
+quart1,quart3=np.percentile(column_numeris_value,[25,75])
+iqr_value =quart3-quart1
+L_B =quart1-(1.5*iqr_value)
+U_B =quart3+(1.5*iqr_value)
+now check columns value <L_B and value>U_B thes value are outliers
+2]np.mean(numeric_column) :- return mean value
+3]np.median(numeric_column) :- return median value numeric column
+
+stats function
+1].mode
+from scipy import stats
+stats.mode[numeric_column] :- maximum repeadted value
+
+model build
+0>all required library import
+1>data set read
+2>data clean(Nan value remove,outlier remove , if linearRegression all data in dataset are numeric)
+3>data divide target and feature dataset
+4]split train and test data
+5]create model object(LinearRegression(),LogisticRegression(),GuassianNB())
+6]model.fit(x_train,y_train)
+7]model.predict(x_test)
+
+
+
+
+
+
+
+ 
